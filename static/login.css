@@ -1,0 +1,36 @@
+body {
+    background-color:#ffffff
+}
+
+.card {
+    width: 350px;
+    padding: 30px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    background: rgb(200, 219, 218);
+}
+
+h3 {
+    font-weight: bold;
+    color: #000000; /* mejor contraste */
+    text-align: center;
+}
+
+.form-control {
+    border-radius: 10px;
+    padding: 10px;
+}
+
+
+.button {
+    border-radius: 10px;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 10px;
+    color: #be2333;
+}
+
+a {
+    margin-top: 10px;
+}
