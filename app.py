@@ -37,6 +37,26 @@ def guardar_usuario():
 
     return "Usuario guardado"
 
+@app.route('/guardar_empleado', methods=['POST'])    
+def guardar_empleado():
+
+    nombreempleado = request.form['txtnombre']
+    apellidoempleado = request.form['txtapellido']
+    documento = request.form['txtdocumento']
+    cargoempleado = request.form['txtcargo']     
+    departamento = request.form['txtdepartamento']
+    horas_extras = request.form['txthoras']
+    bonificacion = request.form['txtbonificacion']
+
+    con = conectar()
+    cursor = con.cursor()
+
+    sql = "INSERT INTO usuarios (nombreempleado, apellidoempleado, docuempleado, cargoempleado, departamento, horas_extras, bonificacion) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+    cursor.execute(sql, (nombreempleado, apellidoempleado, documento, cargoempleado, departamento, horas_extras, bonificacion))
+    con.commit()    
+
+    return "Empleado guardado"
+
     #validar que exista el usuario
 
 @app.route('/validar_usuario', methods=['POST'])    

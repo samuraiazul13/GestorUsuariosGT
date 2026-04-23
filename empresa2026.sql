@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-03-2026 a las 18:17:08
+-- Tiempo de generación: 13-04-2026 a las 20:37:25
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -69,8 +69,11 @@ CREATE TABLE `empleados` (
 --
 
 INSERT INTO `empleados` (`id_empleado`, `docuempleado`, `nombreemple`, `apellidoemple`, `cargoemple`, `salarioB`, `Horasextras`, `bonificacion`, `salud`, `pension`, `salarioneto`, `id_area`) VALUES
-(1, '28540', 'lili', 'kil', 'administrador', 3590300.00, 30, 300.00, 143612.00, 143612.00, 3303076.00, 3),
-(2, '987654321', 'Andrea', 'Andrea', 'Contador', 3450000.00, 50, 500000.00, 138000.00, 138000.00, 3174000.00, 1);
+(2, '1234567', 'Leidy ', 'Diaz Borda', 'Administrativo', 2198800.00, 30, 500000.00, 95600.00, 95600.00, 2390000.00, 1),
+(3, '987654321', 'Aleskha', 'Torres Perez', 'Administrativo', 1800000.00, 30, 350000.00, 89600.00, 89600.00, 2060800.00, 2),
+(4, '1654577898', 'Ailyn', 'Betancour Mendez', 'Administrativo', 1800000.00, 20, 220000.00, 83200.00, 83200.00, 1913600.00, 5),
+(5, '1006544343', 'Ana', 'Muñoz García', 'Contador', 2800000.00, 12, 300000.00, 125440.00, 125440.00, 2885120.00, 2),
+(6, '109498383', 'Sara ', 'Culma ', 'Gerente', 5000000.00, 25, 500000.00, 223000.00, 223000.00, 5129000.00, 3);
 
 -- --------------------------------------------------------
 
@@ -91,9 +94,12 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `usuario`, `PASSWORD`, `rol`, `docuempleado`) VALUES
-(3, 'Felipe4567', '123456', 'administrador', NULL),
-(4, 'Ailyn', '987654321', 'empleado', '987654321'),
-(5, 'Sebastian', '4567', 'Empleado', '28540');
+(1, 'Felipe4567', '123456', 'administrador', NULL),
+(2, 'Leidy ', '87654321', 'Empleado', '1234567'),
+(3, 'Aleska', '34455', 'Empleado', '987654321'),
+(4, 'Ailyn2026', '34567ujhg', 'Empleado', '1654577898'),
+(5, 'Ana4556', '344567', 'Empleado', '1006544343'),
+(6, 'Saracul34', 'g5g54r4d4d', 'Empleado', '109498383');
 
 --
 -- Índices para tablas volcadas
@@ -134,13 +140,13 @@ ALTER TABLE `departamentos`
 -- AUTO_INCREMENT de la tabla `empleados`
 --
 ALTER TABLE `empleados`
-  MODIFY `id_empleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_empleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Restricciones para tablas volcadas
@@ -151,12 +157,6 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `empleados`
   ADD CONSTRAINT `empleados_ibfk_1` FOREIGN KEY (`id_area`) REFERENCES `departamentos` (`id_area`) ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`docuempleado`) REFERENCES `empleados` (`docuempleado`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
